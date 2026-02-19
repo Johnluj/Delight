@@ -1,0 +1,166 @@
+/* =============================================
+   Delight Tech — styles.css
+   Supplemental styles (Tailwind handles most)
+   ============================================= */
+
+/* ---- Base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #0A0A0A;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #E8272A;
+  color: #fff;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #0A0A0A; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #E8272A; }
+
+/* ---- Header scroll state ---- */
+.site-header {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+}
+.site-header.scrolled {
+  background: rgba(10, 10, 10, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: #1E1E1E;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+
+/* ---- Mobile nav open state ---- */
+#nav-toggle[aria-expanded="true"] .nav-bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+#nav-toggle[aria-expanded="true"] .nav-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+#nav-toggle[aria-expanded="true"] .nav-bar:nth-child(3) {
+  width: 24px;
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  display: inline-block;
+  background: #E8272A;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.8rem 2rem;
+  border-radius: 100px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover {
+  background: #c41e21;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232, 39, 42, 0.3);
+}
+.btn-primary:active { transform: translateY(0); }
+
+.btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.8rem 2rem;
+  border-radius: 100px;
+  border: 1px solid #2a2a2a;
+  cursor: pointer;
+  transition: border-color 0.25s, background 0.25s, transform 0.2s;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.btn-outline:hover {
+  border-color: #E8272A;
+  background: rgba(232, 39, 42, 0.08);
+  transform: translateY(-2px);
+}
+.btn-outline:active { transform: translateY(0); }
+
+/* ---- Hero grid background ---- */
+.grid-overlay {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ---- Service cards ---- */
+.service-card {
+  position: relative;
+  transition: background 0.3s ease;
+}
+.service-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: #E8272A;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+.service-card:hover::after {
+  transform: scaleX(1);
+}
+.service-card:hover {
+  background: #121212 !important;
+}
+
+.service-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1e1e1e;
+  line-height: 1;
+}
+
+/* ---- Work cards ---- */
+.work-card {
+  transition: transform 0.3s ease;
+}
+.work-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ---- AOS (Animate on Scroll) ---- */
+.aos-init {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.aos-init[data-aos="fade-left"] {
+  transform: translateX(32px);
+}
+.aos-animate {
+  opacity: 1 !important;
+  transform: translate(0, 0) !important;
+}
+
+/* ---- Contact form focus ring ---- */
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 3px rgba(232, 39, 42, 0.15);
+}
+
+/* ---- Utilities ---- */
+.font-700 { font-weight: 700; }
+.font-800 { font-weight: 800; }
+.font-600 { font-weight: 600; }

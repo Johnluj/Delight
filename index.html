@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Delight Tech — Digital products & engineering</title>
+    <meta name="description" content="Delight Tech — building accessible, high-performance web products and digital experiences." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Syne', 'sans-serif'],
+              body: ['DM Sans', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                red: '#E8272A',
+                dark: '#0A0A0A',
+                card: '#111111',
+                muted: '#6B6B6B',
+                border: '#1E1E1E',
+                light: '#F5F3EE',
+              }
+            },
+            animation: {
+              'fade-up': 'fadeUp 0.7s ease forwards',
+              'fade-in': 'fadeIn 0.6s ease forwards',
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-brand-dark text-white font-body antialiased">
+
+    <!-- Skip link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-brand-red focus:text-white focus:px-4 focus:py-2 focus:rounded">Skip to content</a>
+
+    <!-- Header -->
+    <header class="site-header fixed top-0 left-0 right-0 z-40 transition-all duration-300" id="site-header">
+      <div class="max-w-7xl mx-auto px-5 md:px-10 h-16 md:h-20 flex items-center justify-between">
+        <!-- Logo + Brand -->
+        <div class="flex items-center gap-2">
+          <img src="logo.png" class="w-7 h-7 rounded-sm" alt="Delight Tech logo" width="28" height="28"/>
+          <a class="font-display font-800 text-lg tracking-tight text-white hover:text-brand-red transition-colors" href="#">Delight Tech</a>
+        </div>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center gap-8" aria-label="Main navigation">
+          <a href="#services" class="text-sm text-gray-400 hover:text-white transition-colors">Services</a>
+          <a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">Work</a>
+          <a href="#about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a>
+          <a href="#contact" class="text-sm font-medium bg-brand-red text-white px-5 py-2 rounded-full hover:bg-red-700 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="nav-toggle" class="md:hidden text-gray-300 hover:text-white flex flex-col gap-1.5 p-2" aria-controls="mobile-nav" aria-expanded="false" aria-label="Toggle menu">
+          <span class="nav-bar block w-6 h-0.5 bg-current transition-all duration-300"></span>
+          <span class="nav-bar block w-6 h-0.5 bg-current transition-all duration-300"></span>
+          <span class="nav-bar block w-4 h-0.5 bg-current transition-all duration-300"></span>
+        </button>
+      </div>
+
+      <!-- Mobile Nav -->
+      <div id="mobile-nav" class="hidden md:hidden bg-brand-dark/95 backdrop-blur-md border-t border-brand-border">
+        <nav class="max-w-7xl mx-auto px-5 py-6 flex flex-col gap-4" aria-label="Mobile navigation">
+          <a href="#services" class="text-base text-gray-300 hover:text-white transition-colors py-1 mobile-nav-link">Services</a>
+          <a href="#work" class="text-base text-gray-300 hover:text-white transition-colors py-1 mobile-nav-link">Work</a>
+          <a href="#about" class="text-base text-gray-300 hover:text-white transition-colors py-1 mobile-nav-link">About</a>
+          <a href="#contact" class="text-base font-medium bg-brand-red text-white px-5 py-2.5 rounded-full text-center hover:bg-red-700 transition-colors mobile-nav-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- Hero -->
+      <section class="hero-section min-h-screen flex items-center pt-20 pb-16 px-5 md:px-10 overflow-hidden relative">
+        <!-- Decorative background -->
+        <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+          <div class="absolute top-1/4 right-0 w-72 h-72 md:w-96 md:h-96 bg-brand-red/10 rounded-full blur-3xl"></div>
+          <div class="absolute bottom-1/4 left-0 w-64 h-64 bg-red-900/10 rounded-full blur-3xl"></div>
+          <div class="grid-overlay absolute inset-0 opacity-5"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto w-full relative">
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <!-- Copy -->
+            <div class="flex-1 text-center lg:text-left aos-init" data-aos="fade-up">
+              <span class="inline-block text-brand-red text-xs font-display font-600 tracking-widest uppercase mb-6 border border-brand-red/30 px-3 py-1 rounded-full">Digital Studio · Est. 2022</span>
+              <h1 class="font-display font-extrabold text-4xl sm:text-5xl md:text-6xl xl:text-7xl leading-[1.05] tracking-tight text-white mb-6">
+                We design &amp;<br>build <span class="text-brand-red italic">delightful</span><br>web products
+              </h1>
+              <p class="text-gray-400 text-lg md:text-xl leading-relaxed max-w-xl mx-auto lg:mx-0 mb-10">
+                Delight Tech is a product-focused engineering studio. We help teams ship accessible, fast, and maintainable web experiences.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a class="btn-primary" href="https://linktr.ee/Johnadeagbo" target="_blank" rel="noopener">Get in touch</a>
+                <a class="btn-outline" href="#work">Our work ↓</a>
+              </div>
+            </div>
+            <!-- Media -->
+            <div class="flex-1 w-full max-w-md lg:max-w-lg aos-init" data-aos="fade-left" data-aos-delay="200">
+              <div class="relative">
+                <div class="absolute -inset-4 bg-brand-red/20 rounded-3xl blur-2xl"></div>
+                <img src="dev.jpeg" alt="Illustration of product" class="relative w-full rounded-2xl object-cover shadow-2xl border border-brand-border aspect-[4/3]" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-24 md:py-32 px-5 md:px-10 bg-[#0D0D0D]">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-16 aos-init" data-aos="fade-up">
+            <span class="text-brand-red text-xs font-display uppercase tracking-widest">What we do</span>
+            <h2 class="font-display font-extrabold text-3xl md:text-5xl mt-2 text-white">Services</h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-brand-border">
+            <!-- Service cards -->
+            <article class="service-card bg-brand-dark p-8 md:p-10 group aos-init" data-aos="fade-up" data-aos-delay="0">
+              <div class="service-num">01</div>
+              <h3 class="font-display font-700 text-xl text-white mb-3 mt-4 group-hover:text-brand-red transition-colors">Custom Website Development</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Bring your ideas to life with clean, responsive websites tailored to your brand and goals. I focus on performance, accessibility, and modern design using frameworks like React, Next.js, and more.</p>
+            </article>
+            <article class="service-card bg-brand-dark p-8 md:p-10 group aos-init" data-aos="fade-up" data-aos-delay="80">
+              <div class="service-num">02</div>
+              <h3 class="font-display font-700 text-xl text-white mb-3 mt-4 group-hover:text-brand-red transition-colors">CMS Integration</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Easy content management with WordPress, Webflow, or headless CMS setups. You control your content, I handle the code.</p>
+            </article>
+            <article class="service-card bg-brand-dark p-8 md:p-10 group aos-init" data-aos="fade-up" data-aos-delay="160">
+              <div class="service-num">03</div>
+              <h3 class="font-display font-700 text-xl text-white mb-3 mt-4 group-hover:text-brand-red transition-colors">Maintenance &amp; Support</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Keep your website secure, updated, and performing at its best, without the hassle.</p>
+            </article>
+            <article class="service-card bg-brand-dark p-8 md:p-10 group aos-init" data-aos="fade-up" data-aos-delay="0">
+              <div class="service-num">04</div>
+              <h3 class="font-display font-700 text-xl text-white mb-3 mt-4 group-hover:text-brand-red transition-colors">Brand Identity Design</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Create a brand that stands out. I design logos, color palettes, and visual systems that tell your story and connect with your audience.</p>
+            </article>
+            <article class="service-card bg-brand-dark p-8 md:p-10 group aos-init" data-aos="fade-up" data-aos-delay="80">
+              <div class="service-num">05</div>
+              <h3 class="font-display font-700 text-xl text-white mb-3 mt-4 group-hover:text-brand-red transition-colors">UI/UX Design</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Design interfaces that engage users and drive results. From wireframes to high-fidelity prototypes, I focus on clarity, conversion, and visual harmony.</p>
+            </article>
+            <article class="service-card bg-brand-dark p-8 md:p-10 group aos-init" data-aos="fade-up" data-aos-delay="160">
+              <div class="service-num">06</div>
+              <h3 class="font-display font-700 text-xl text-white mb-3 mt-4 group-hover:text-brand-red transition-colors">Print &amp; Promotional Design</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Bring your brand offline with sleek business cards, brochures, posters, and packaging that leave a lasting impression.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section id="work" class="py-24 md:py-32 px-5 md:px-10">
+        <div class="max-w-7xl mx-auto">
+          <div class="mb-16 aos-init" data-aos="fade-up">
+            <span class="text-brand-red text-xs font-display uppercase tracking-widest">Portfolio</span>
+            <h2 class="font-display font-extrabold text-3xl md:text-5xl mt-2 text-white">Selected work</h2>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <article class="work-card group aos-init" data-aos="fade-up" data-aos-delay="0">
+              <div class="overflow-hidden rounded-2xl bg-brand-card border border-brand-border">
+                <div class="overflow-hidden aspect-[16/10]">
+                  <img src="church.JPG" alt="Client church screenshot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div class="p-6 md:p-8">
+                  <h3 class="font-display font-700 text-lg text-white mb-2">Reviving Fire Ministries</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed mb-5">Secure, performant church website used by congregants daily. We built the website to showcase their mission and values effectively.</p>
+                  <a href="https://sites.google.com/view/reviving-fire-ministry-intl/home" class="text-sm font-medium text-brand-red hover:text-red-400 transition-colors inline-flex items-center gap-1" target="_blank" rel="noopener">View case study <span>→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card group aos-init" data-aos="fade-up" data-aos-delay="100">
+              <div class="overflow-hidden rounded-2xl bg-brand-card border border-brand-border">
+                <div class="overflow-hidden aspect-[16/10]">
+                  <img src="Portfolio.JPG" alt="Personal Portfolio screenshot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div class="p-6 md:p-8">
+                  <h3 class="font-display font-700 text-lg text-white mb-2">Personal Portfolio</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed mb-5">A showcase of my work, skills, and projects. Designed for clarity and impact.</p>
+                  <a href="https://johnluj.netlify.app/" class="text-sm font-medium text-brand-red hover:text-red-400 transition-colors inline-flex items-center gap-1" target="_blank" rel="noopener">View case study <span>→</span></a>
+                </div>
+              </div>
+            </article>
+
+            <article class="work-card group aos-init" data-aos="fade-up" data-aos-delay="200">
+              <div class="overflow-hidden rounded-2xl bg-brand-card border border-brand-border">
+                <div class="overflow-hidden aspect-[16/10]">
+                  <img src="hotell.jfif" alt="Hotel website screenshot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                </div>
+                <div class="p-6 md:p-8">
+                  <h3 class="font-display font-700 text-lg text-white mb-2">Hotel Website</h3>
+                  <p class="text-gray-500 text-sm leading-relaxed mb-5">A modern, responsive website for a boutique hotel, featuring online booking and a gallery of rooms.</p>
+                  <a href="#" class="text-sm font-medium text-brand-red hover:text-red-400 transition-colors inline-flex items-center gap-1">View case study <span>→</span></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-24 md:py-32 px-5 md:px-10 bg-[#0D0D0D]">
+        <div class="max-w-7xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            <div class="aos-init" data-aos="fade-up">
+              <span class="text-brand-red text-xs font-display uppercase tracking-widest">Who we are</span>
+              <h2 class="font-display font-extrabold text-3xl md:text-5xl mt-2 text-white mb-8">About Delight Tech</h2>
+              <div class="space-y-4 text-gray-400 leading-relaxed">
+                <p>We're a small team of designers and engineers who care about craft, clarity, and collaboration. We partner with product teams to ship features quickly and sustainably.</p>
+                <p>Founded in 2022, Delight Tech has worked with startups and established brands across various industries, delivering web solutions that drive engagement and growth.</p>
+                <p>We believe in the power of design and technology to transform businesses and improve lives.</p>
+                <p>We bridge the gap between design and development — blending creativity with technical precision. Our goal is to deliver solutions that look amazing, load fast, and feel effortless to use.</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4 aos-init" data-aos="fade-up" data-aos-delay="150">
+              <a href="#contact" class="btn-primary text-center">Get in touch</a>
+              <a href="https://delighttech.netlify.app" class="btn-outline text-center" target="_blank" rel="noopener">Visit our website</a>
+              <a href="#work" class="btn-outline text-center">View our work</a>
+              <a href="https://linktr.ee/Johnadeagbo" class="btn-outline text-center" target="_blank" rel="noopener">Join our team</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-24 md:py-32 px-5 md:px-10">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-14 aos-init" data-aos="fade-up">
+            <span class="text-brand-red text-xs font-display uppercase tracking-widest">Let's talk</span>
+            <h2 class="font-display font-extrabold text-3xl md:text-5xl mt-2 text-white">Contact</h2>
+            <p class="text-gray-400 mt-4 text-lg">Tell us about your project and timeline — we'll get back within 48 hours.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12 aos-init" data-aos="fade-up" data-aos-delay="100">
+            <address class="not-italic text-gray-400 text-sm leading-loose">
+              <strong class="block text-white font-display mb-2">Our office</strong>
+              H34, Heritage Mall, Cocoa House<br>
+              Dugbe, Ibadan, Nigeria 20036
+            </address>
+            <div class="text-gray-400 text-sm leading-loose">
+              <strong class="block text-white font-display mb-2">Contact</strong>
+              <a href="mailto:adeagbojohnluj@gmail.com" class="hover:text-brand-red transition-colors">adeagbojohnluj@gmail.com</a><br>
+              <a href="tel:+2347046376197" class="hover:text-brand-red transition-colors">+234 704 637 6197</a><br>
+              <a href="tel:+2349153835134" class="hover:text-brand-red transition-colors">+234 915 383 5134</a>
+            </div>
+          </div>
+
+          <form id="contactForm" class="space-y-5 aos-init" data-aos="fade-up" data-aos-delay="200">
+            <div>
+              <label class="block text-sm text-gray-400 mb-2 font-medium">Your email</label>
+              <input type="email" name="email" required placeholder="hello@yourcompany.com"
+                class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 transition-colors text-sm" />
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-2 font-medium">Message</label>
+              <textarea name="message" required placeholder="Project details, budget, timeline..." rows="5"
+                class="w-full bg-brand-card border border-brand-border rounded-xl px-4 py-3.5 text-white placeholder-gray-600 focus:outline-none focus:border-brand-red/60 transition-colors text-sm resize-none"></textarea>
+            </div>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-2">
+              <button type="submit" class="btn-primary">Send message</button>
+              <small class="text-gray-600 text-xs">Or email us at <a href="mailto:adeagbojohnluj@gmail.com" class="text-gray-400 hover:text-brand-red transition-colors">adeagbojohnluj@gmail.com</a></small>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-brand-border py-12 px-5 md:px-10">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between gap-8 mb-10">
+          <div>
+            <strong class="font-display font-800 text-white text-lg">Delight Tech</strong>
+            <p class="text-gray-600 text-sm mt-1">Design · Engineering · Product</p>
+          </div>
+          <nav class="flex gap-6 flex-wrap" aria-label="Footer navigation">
+            <a href="#services" class="text-sm text-gray-500 hover:text-white transition-colors">Services</a>
+            <a href="#work" class="text-sm text-gray-500 hover:text-white transition-colors">Work</a>
+            <a href="#contact" class="text-sm text-gray-500 hover:text-white transition-colors">Contact</a>
+          </nav>
+          <div class="text-sm text-gray-600">
+            Follow us:
+            <a href="https://www.facebook.com/john.adeagbo.3" class="text-gray-500 hover:text-white transition-colors ml-1" target="_blank" rel="noopener">Facebook</a> ·
+            <a href="https://www.instagram.com/john_adeagbo?igsh=em5zZ2ZrMnB1MWd2" class="text-gray-500 hover:text-white transition-colors" target="_blank" rel="noopener">Instagram</a> ·
+            <a href="https://x.com/Johnluj1" class="text-gray-500 hover:text-white transition-colors" target="_blank" rel="noopener">Twitter</a> ·
+            <a href="https://www.linkedin.com/in/john-adeagbo-85182325a/" class="text-gray-500 hover:text-white transition-colors" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+        <div class="border-t border-brand-border pt-6">
+          <small class="text-gray-700 text-xs">&copy; <span id="year"></span> Delight Tech — All rights reserved.</small>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
